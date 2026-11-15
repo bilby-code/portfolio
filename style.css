@@ -1,0 +1,284 @@
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: white;
+}
+
+main {
+	background-color: white;
+	width: 1000px;
+	height: 562.5px;
+}
+
+.development-mode a:empty {
+	background-color: rgba(133, 133, 254, 0.4);
+	border: 1px solid rgba(37, 37, 117, 0.5);
+}
+
+a {
+	text-decoration: none;
+}
+
+body *.imusic-loading {
+	display: none;
+}
+body.imusic-loading *.imusic-loading {
+	animation: blinking 700ms infinite;
+	display: block;
+}@keyframes blinking {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+body.production-mode .waxml-open-button {
+	display: none;
+}
+
+/* ---------- Sidtitel ---------- */
+
+.site-title {
+	position: absolute;
+	top: 24px;
+	left: 30px;
+	font-size: 20px;
+	letter-spacing: 0.05em;
+	color: #000000;
+}
+
+/* ---------- Ljudspelare ---------- */
+
+/* Omslag runt vågformen så att playknappen kan centreras ovanpå */
+.audio-player .waveform-wrap {
+	position: relative;
+}
+
+/* Playknappen ligger centrerad ovanpå vågformen.
+   Den är dold tills man hovrar över spelaren. */
+.audio-player .play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	opacity: 0;
+	transition: transform 150ms ease, background-color 150ms ease, opacity 150ms ease;
+}
+
+.audio-player .play-btn:hover {
+	transform: translate(-50%, -50%) scale(1.08);
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Knappen dyker upp när man hovrar över spelaren */
+.audio-player:hover .play-btn {
+	opacity: 1;
+}
+
+/* Play-ikon (triangel) ritad med CSS */
+.audio-player .play-btn .icon {
+	display: block;
+	margin-left: 2px;
+	border-left: 8px solid #FFFFFF;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+}
+
+/* Paus-ikon (två vertikala streck) medan ljudet spelas */
+.audio-player .play-btn.playing .icon {
+	margin-left: 0;
+	width: 8px;
+	height: 9px;
+	border: none;
+	background: linear-gradient(to right, #FFFFFF 0 3px, transparent 3px 5px, #FFFFFF 5px 8px);
+}
+
+.audio-player .track-title {
+	display: none;
+	font-size: 9px;
+	letter-spacing: 0.05em;
+	color: #000000;
+	margin-bottom: 2px;
+}
+
+.audio-player .waveform {
+	display: block;
+	width: 100%;
+	height: 28px;
+	cursor: pointer;
+}
+
+/* Liten hint-text under sista vågformen */
+.waveform-hint {
+	font-size: 7px;
+	letter-spacing: 0.05em;
+	color: #000000;
+	text-align: center;
+	margin-top: 4px;
+}
+
+.waveform-hint a {
+	color: inherit;
+}
+
+/* Layoutbehållaren på page1 – innehållet fördelas jämnt
+   så att helheten känns centrerad på sidan */
+.page1-layout {
+	width: 720px;
+	justify-content: space-between;
+}
+
+/* Kolumnen med ljudspelare */
+.players-column {
+	width: 300px;
+	flex: 0 0 auto;
+}
+
+/* Bildkolumnen */
+.image-column {
+	flex: 0 0 auto;
+}
+
+/* Bilden till vänster om ljudspelarna */
+.page1-image {
+	width: 340px;
+	height: auto;
+	display: block;
+}
+
+/* Inforuta som visas istället för bilden under uppspelning.
+   Deaktiverad för tillfället – ta bort kommentarerna för att aktivera. */
+/*
+.track-info {
+	display: none;
+	width: 340px;
+	font-size: 12px;
+	line-height: 1.6;
+	color: #000000;
+}
+
+.track-info-title {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.track-info p {
+	margin: 0;
+}
+
+body.playing .page1-image {
+	display: none;
+}
+
+body.playing .track-info {
+	display: block;
+}
+*/
+
+/* ---------- Lösenordssida ---------- */
+
+.password-input {
+	width: 220px;
+	padding: 10px 14px;
+	font-size: 15px;
+	font-family: "Open Sans", sans-serif;
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.6);
+	border: 2px solid #000000;
+	border-radius: 8px;
+	outline: none;
+	text-align: center;
+	transition: background-color 150ms ease;
+}
+
+.password-input:focus {
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Felmeddelandet är dolt tills fel lösenord angivits */
+.password-error {
+	display: none;
+	font-size: 13px;
+	color: #C94747;
+}
+
+.password-error.show {
+	display: block;
+}
+
+/* ---------- Mobilversion ---------- */
+/* På smala skärmar staplas titel, bild och ljudspelare vertikalt */
+@media (max-width: 768px) {
+
+	/* Återställ main så att max.size-skalningen inte klämmer innehållet */
+	main {
+		width: 100% !important;
+		height: auto !important;
+		transform: none !important;
+		position: static !important;
+		overflow: visible !important;
+	}
+
+	section {
+		position: static !important;
+		height: auto !important;
+	}
+
+	/* Dölj inaktiva sektioner, visa bara den som är :target (eller #start som standard) */
+	section:not(:target) {
+		display: none;
+	}
+
+	section:target {
+		display: block;
+		opacity: 1 !important;
+		z-index: 0 !important;
+	}
+
+	/* Titeln ligger i flödet ovanför bilden istället för absolut positionerad */
+	.site-title {
+		position: static;
+		font-size: 16px;
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	.page1-layout {
+		width: 90%;
+		flex-direction: column;
+		gap: 30px;
+		position: static !important;
+		transform: none !important;
+		margin: 20px auto;
+	}
+
+	.image-column {
+		order: -1;
+	}
+
+	/* Bilden och vågformerna är lika breda */
+	.page1-image {
+		width: 100%;
+		display: block;
+	}
+
+	.players-column {
+		width: 100%;
+	}
+}

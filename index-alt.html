@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link href="plugins/bootstrap.min.css" rel="stylesheet">
+		<script src="plugins/bootstrap.bundle.min.js"></script>
+		<link href="fonts.css" rel="stylesheet" type="text/css" />
+		<link href="style.css" rel="stylesheet" type="text/css" />
+
+		<title>William Lövgren Bilby</title>
+	</head>
+
+
+	<body class="development-mode">
+
+		<main class="max-size">
+
+			<!-- Startsida med lösenordsskydd -->
+			<section id="start" class="background-color-FFFFFF transition-duration-1000ms">
+				<div class="left-50 top-50 translate-middle text-center">
+					<div class="password-box d-flex flex-column align-items-center gap-3">
+						<input type="password" id="password-input" class="password-input" placeholder="Lösenord" autocomplete="off">
+						<div class="password-error open-sans-light">Fel lösenord, försök igen</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="page1" class="background-color-FFFFFF transition-duration-1000ms">
+
+				<!-- Titel uppe till vänster -->
+				<div class="site-title inter-light">WILLIAM LÖVGREN BILBY</div>
+
+				<!-- Bilden och ljudspelarna centreras på sidan med left-50, top-50 och translate-middle -->
+				<div class="left-50 top-50 translate-middle d-flex align-items-center page1-layout">
+					<div class="image-column d-flex justify-content-center">
+						<img src="images/IMG_7797alt.jpg" alt="IMG_7797" class="page1-image">
+						<!-- Inforuta (deaktiverad) – ta bort kommentaren och aktivera CSS/JS för att använda
+						<div class="track-info inter-light">
+							<div class="track-info-title inter-medium"></div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+						</div>
+						-->
+					</div>
+					<div class="players-column d-flex flex-column gap-3">
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">William CELLOETYD_2</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/William CELLOETYD_2.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Pianoblasarr3</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Pianoblasarr3_2026_11_07.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Verk1</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Verk1Altmaster.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Impro</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Impro _ HVP ny mix2_2026_11_15.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Pakib</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Pakib2.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Haneda – Bounce 1</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Haneda_2026_11_12.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="audio-player d-flex align-items-center gap-3">
+							<div class="track flex-grow-1">
+								<div class="track-title inter-light">Pro Tools8</div>
+								<div class="waveform-wrap">
+									<canvas class="waveform"></canvas>
+									<a class="play-btn"><span class="icon"></span></a>
+								</div>
+							</div>
+							<audio src="audio/Pro Tools8.mp3" preload="auto"></audio>
+						</div>
+
+						<div class="waveform-hint inter-light">Click waveform to play</div>
+						<div class="waveform-hint inter-light"><a href="mailto:william.bilby@gmail.com">william.bilby@gmail.com</a></div>
+
+					</div>
+				</div>
+
+			</section>
+
+		</main>
+
+
+		<script src="plugins/max.size.js"></script>
+		<script src="waxml.js" data-source="wa.xml"></script>
+		<script src="plugins/script.js"></script>
+		<script src="script.js"></script>
+
+
+	</body>
+</html>
